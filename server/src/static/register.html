@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Register</title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+  <div id="error1" class="error hidden">
+    <p>Username taken!</p>
+  </div>
+  <div id="error2" class="error hidden">
+    <p>Passwords don't match!</p>
+  </div>
+  <form method="post" class="form">
+    <label>Username</label>
+    <input name="username" type="text" autocorrect="off" autocapitalize="none">
+    <label>Password</label>
+    <input name="password" type="password">
+    <label>Repeat Password</label>
+    <input name="password2" type="password">
+    <button type="submit">Register</button>
+  </form>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search)
+    const error = urlParams.get('error')
+    if (error == "nametaken") {
+      document.getElementById("error1").classList.toggle("hidden")
+    } else if (error == "nomatch") {
+      document.getElementById("error2").classList.toggle("hidden")
+    }
+  </script>
+</body>
+</html>

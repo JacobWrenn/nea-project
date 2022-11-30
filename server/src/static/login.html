@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Login</title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+  <div id="error" class="error hidden">
+    <p>Incorrect username or password!</p>
+  </div>
+  <form method="post" class="form">
+    <label>Username</label>
+    <input name="username" type="text" autocorrect="off" autocapitalize="none" autocomplete="off">
+    <label>Password</label>
+    <input name="password" type="password">
+    <button type="submit">Login</button>
+  </form>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search)
+    const error = urlParams.get('incorrect')
+    if (error) {
+      document.getElementById("error").classList.toggle("hidden")
+    }
+  </script>
+</body>
+</html>

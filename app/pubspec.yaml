@@ -1,0 +1,25 @@
+name: app
+description: A new Flutter project.
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_map:
+  flutter_web_auth: 0.3.0
+  flutter_spinkit:
+  flutter_keychain:
+  jwt_decode:
+  http:
+  latlng:
+
+dev_dependencies:
+
+flutter:
+
+  uses-material-design: true
